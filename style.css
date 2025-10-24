@@ -1,0 +1,617 @@
+/* ======== ОСНОВНЫЕ НАСТРОЙКИ ======== */
+:root {
+    --blue: #273043;
+    --gray: #9197AE;
+    --white: #EFF6EE;
+    --red: #F02D3A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--blue);
+    line-height: 1.6;
+}
+
+/* ======== БАННЕР ======== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 5.5rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ======== НАВИГАЦИЯ ======== */
+.navbar {
+    background-color: var(--blue);
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    margin: 0.5rem 1rem;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+/* ======== ГЛАВНАЯ ======== */
+.home-content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+}
+
+.intro p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+/* ======== ПРЕВЬЮ-КАРТОЧКИ ======== */
+.preview-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--gray);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h4 {
+    margin: 1rem 0 0.5rem;
+    color: var(--blue);
+}
+
+.card p {
+    color: var(--gray);
+    padding: 0 1rem 1.2rem;
+}
+
+/* ======== ФУТЕР ======== */
+footer {
+  background-color: #273043; /* Prussian Blue */
+  color: #EFF6EE;            /* Mint Cream */
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.telegram-link {
+  color: #EFF6EE; /* Imperial Red */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.telegram-link:hover {
+  color: #EFF6EE; /* при наведении светлеет */
+}
+
+.footer-slogan {
+  opacity: 0.7;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+
+/* ======== АДАПТИВНОСТЬ ======== */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* ======== CONTACT PAGE ======== */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.contact-photo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.contact-info {
+    background-color: var(--light);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 400px;
+}
+
+.contact-info h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+}
+
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--red);
+}
+
+.map-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.map-section h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+
+/* ======== ВИНТАЖНАЯ АНИМАЦИЯ ======== */
+
+/* Плавное появление элементов */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Мягкое мерцание красных акцентов */
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 4px rgba(240,45,58,0.2); }
+    50% { text-shadow: 0 0 10px rgba(240,45,58,0.4); }
+    100% { text-shadow: 0 0 4px rgba(240,45,58,0.2); }
+}
+
+.accent-glow {
+    color: var(--accent);
+    animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+/* Эффект лёгкой винтажной текстуры (зерно) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background: url('images/noise-texture.png');
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    z-index: 9999;
+}
+
+/* Плавное появление при прокрутке */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация появления баннера */
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+.banner img {
+    opacity: 0;
+    transform: scale(1.1);
+    animation: bannerFade 1.8s ease forwards;
+}
+@keyframes bannerFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Немного "дрожащего свечения" для футера */
+.footer-text {
+    animation: flicker 4s infinite;
+}
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.7;
+    }
+}
+
+/* ===== News: квадратные карточки (presentable grid) ===== */
+.news-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+/* квадратный контейнер: сохраняет соотношение 1:1 */
+.card-square {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform .28s ease, box-shadow .28s ease;
+  min-height: 0;
+}
+
+/* Используем трюк aspect-ratio (современные браузеры) */
+.card-square .card-media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+.card-square .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center;
+  transition: transform .6s cubic-bezier(.2,.9,.2,1);
+}
+
+/* Тело карточки: заголовок и дата */
+.card-square .card-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.card-title {
+  font-size: 1rem;
+  color: var(--blue);
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+}
+.card-date {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Hover / focus эффекты */
+.card-square:hover,
+.card-square:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  outline: none;
+}
+.card-square:hover .card-media img,
+.card-square:focus .card-media img {
+  transform: scale(1.06);
+}
+
+/* Акцентная рамка для первых нескольких карточек (опционально) */
+.news-grid .card-square:nth-child(-n+2) {
+  border: 1px solid rgba(240,45,58,0.08);
+}
+
+/* Адаптив */
+@media (max-width: 520px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-title { font-size: 1.02rem; }
+}
+
+/* ======== АРХИВ (КАРУСЕЛЬ С ЭФФЕКТОМ ЛИСТАНИЯ) ======== */
+.archive-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background: var(--mint);
+}
+
+/* Обёртка */
+.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+  perspective: 2000px; /* Для 3D flip */
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Трек */
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* Слайды */
+.carousel-slide {
+  min-width: 50%;
+  position: relative;
+  transform-origin: center right;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.carousel-slide img {
+  max-width: 95%;
+  max-height: 70vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Тени при перелистывании */
+.carousel-slide.flip-forward {
+  animation: flipForward 0.8s forwards;
+}
+.carousel-slide.flip-back {
+  animation: flipBack 0.8s forwards;
+}
+
+@keyframes flipForward {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  50% { transform: rotateY(-90deg); opacity: 0.3; }
+  100% { transform: rotateY(0deg); opacity: 1; }
+}
+
+@keyframes flipBack {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  50% { transform: rotateY(90deg); opacity: 0.3; }
+  100% { transform: rotateY(0deg); opacity: 1; }
+}
+
+/* Кнопки стрелок */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15, 25, 35, 0.6);
+  color: var(--mint);
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: background 0.3s ease, transform 0.2s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: var(--accent);
+  color: var(--light);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+/* Для телефонов */
+@media (max-width: 768px) {
+  .carousel-slide { min-width: 100%; }
+}
+
+/* ======== FASHION PAGE ======== */
+.fashion-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  background: var(--mint);
+  padding: 60px 8%;
+  overflow: hidden;
+}
+
+/* Модели по бокам */
+.model-side {
+  position: sticky;
+  top: 120px;
+  width: 180px;
+  flex-shrink: 0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.model-side img {
+  width: 100%;
+  height: auto;
+  filter: saturate(0.8) contrast(1.1);
+  transition: transform 0.4s ease, filter 0.3s;
+}
+
+.model-side img:hover {
+  transform: scale(1.05);
+  filter: saturate(1) contrast(1.2);
+}
+
+/* Левая и правая позиция */
+.model-side.left { margin-right: 40px; }
+.model-side.right { margin-left: 40px; }
+
+/* Контентная зона */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  flex: 1;
+  z-index: 2;
+}
+
+.article-card {
+  background: rgba(255,255,255,0.6);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.article-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.article-card h3 {
+  padding: 15px 20px 0 20px;
+  color: var(--dark);
+  font-family: 'Playfair Display', serif;
+}
+
+.article-card .date {
+  padding: 0 20px 15px 20px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 900px) {
+  .fashion-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  .model-side {
+    display: none;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.updates-title {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--prussian-blue);
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 60px;   /* отодвигает от блока "Добро пожаловать" */
+    margin-bottom: 50px; /* отодвигает от карточек */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+}

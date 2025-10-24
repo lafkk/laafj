@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LafDoors | News</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- HEADER / BANNER -->
+  <header class="main-header">
+    <div class="banner">
+      <img src="images/news banner.jpg" alt="Баннер LafDoors">
+      <h1 class="banner-title">LafDoors</h1>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="archive.html">Archive</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="page-content">
+    <h2 class="page-title fade-in">Новости LafDoors</h2>
+    <p class="page-subtitle fade-in">Кликните на карточку, чтобы открыть полную статью в новой вкладке.</p>
+
+    <!-- GRID of square article cards -->
+    <section class="news-grid" aria-label="Сетка новостей">
+      <!-- Пример карточки: заменяйте image src и data-url на свои -->
+      <article class="article-card card-square fade-in" data-url="https://example.com/news1" role="link" tabindex="0">
+        <div class="card-media" aria-hidden="true">
+          <img src="images/article1.jpg" alt="Изображение к статье 'Новый взгляд на стиль'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Новый взгляд на стиль</h3>
+          <time class="card-date" datetime="2025-10-24">24 октября 2025</time>
+        </div>
+      </article>
+
+      <article class="article-card card-square fade-in" data-url="https://example.com/news2" role="link" tabindex="0">
+        <div class="card-media" aria-hidden="true">
+          <img src="images/article2.jpg" alt="Изображение к статье 'Выставка в Милане'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Выставка в Милане</h3>
+          <time class="card-date" datetime="2025-10-21">21 октября 2025</time>
+        </div>
+      </article>
+
+      <article class="article-card card-square fade-in" data-url="https://example.com/news3" role="link" tabindex="0">
+        <div class="card-media" aria-hidden="true">
+          <img src="images/article3.jpg" alt="Изображение к статье 'Тенденции сезона'">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Тенденции сезона</h3>
+          <time class="card-date" datetime="2025-10-18">18 октября 2025</time>
+        </div>
+      </article>
+
+      <!-- Добавляй здесь столько карточек, сколько нужно (они автоматически выстроятся в сетку) -->
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="https://t.me/suksjsns" target="_blank" class="telegram-link">
+      💬 Перейти в Telegram-канал
+    <p class="footer-text">“The choice of real Masons”</p>
+  </footer>
+
+</body>
+</html>
